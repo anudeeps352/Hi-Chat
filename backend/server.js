@@ -43,7 +43,7 @@ app.use("/api/message", messageRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT;
 
 const server = app.listen(
   PORT,
@@ -53,7 +53,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin:["http://localhost:10000","https://hi-chat.onrender.com"]
+    origin:"https://hi-chat.onrender.com",
     // credentials: true,
   },
 });
