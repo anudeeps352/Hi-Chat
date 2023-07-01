@@ -27,17 +27,19 @@ function Homepage() {
         d="flex"
         justifyContent="center"
         p={3}
-        bg="white"
+        bg="#4F709C"
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="1px"
+        border="none"
+        
       >
         <Text fontSize="4xl" fontFamily="Work sans">
           Hi-Chat
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box bg="#4F709C" w="100%" p={4} borderRadius="lg" borderWidth="1px" border="none">
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>

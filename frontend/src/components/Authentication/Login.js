@@ -54,6 +54,7 @@ const Login = () => {
         position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
+      window.location.reload();
       setLoading(false);
       history.push("/chats");
     } catch (error) {
@@ -75,9 +76,16 @@ const Login = () => {
         <FormLabel>Email Address</FormLabel>
         <Input
           value={email}
+          color="black"
+          borderColor="#213555"
           type="email"
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
+          _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+          }}
         />
       </FormControl>
       <FormControl id="password" isRequired>
@@ -88,16 +96,29 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             type={show ? "text" : "password"}
             placeholder="Enter password"
+            color="#213555"
+            borderColor="#213555"
+            _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+          }}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" 
+            bg='#9BCDD2'
+            color="#213555"
+            onClick={handleClick}>
               {show ? "Hide" : "Show"}
+              
             </Button>
           </InputRightElement>
         </InputGroup>
       </FormControl>
       <Button
         colorScheme="blue"
+        bg='#9BCDD2'
+        color="#213555"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}

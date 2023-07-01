@@ -50,11 +50,13 @@ const MyChats = ({ fetchAgain }) => {
       d={{ base: selectedChat ? "none" : "flex", md: "flex" }}
       flexDir="column"
       alignItems="center"
-      p={3}
-      bg="white"
+      p={3}                             //adjust display according to whether chat selected
+      
       w={{ base: "100%", md: "31%" }}
       borderRadius="lg"
       borderWidth="1px"
+      bg="#4F709C"
+      border="none"
     >
       <Box
         pb={3}
@@ -65,11 +67,12 @@ const MyChats = ({ fetchAgain }) => {
         w="100%"
         justifyContent="space-between"
         alignItems="center"
+        bg="#4F709C"
       >
         My Chats
         <GroupChatModal>
           <Button
-            d="flex"
+            d="flex"                  //modal fr making grp chat
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
             rightIcon={<AddIcon />}
           >
@@ -89,11 +92,11 @@ const MyChats = ({ fetchAgain }) => {
       >
         {chats ? (
           <Stack overflowY="scroll">
-            {chats.map((chat) => (
-              <Box
+            {chats.map((chat) => (                //mychats all chats section
+              <Box                                      
                 onClick={() => setSelectedChat(chat)}
                 cursor="pointer"
-                bg={selectedChat === chat ? "#38B2AC" : "#E8E8E8"}
+                bg={selectedChat === chat ? "#4F709C" : "#E8E8E8"}
                 color={selectedChat === chat ? "white" : "black"}
                 px={3}
                 py={2}
@@ -105,7 +108,7 @@ const MyChats = ({ fetchAgain }) => {
                     ? getSender(loggedUser, chat.users)
                     : chat.chatName}
                 </Text>
-                {chat.latestMessage && (
+                {chat.latestMessage && (          //provide latest chat in mychat
                   <Text fontSize="xs">
                     <b>{chat.latestMessage.sender.name} : </b>
                     {chat.latestMessage.content.length > 50

@@ -69,6 +69,7 @@ const Signup = () => {
         position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
+      window.location.reload();
       setPicLoading(false);
       history.push("/chats");
     } catch (error) {
@@ -135,6 +136,13 @@ const Signup = () => {
         <FormLabel>Name</FormLabel>
         <Input
           placeholder="Enter Your Name"
+          color="black"
+          borderColor="#213555"
+          _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+          }}
           onChange={(e) => setName(e.target.value)}
         />
       </FormControl>
@@ -144,6 +152,13 @@ const Signup = () => {
           type="email"
           placeholder="Enter Your Email Address"
           onChange={(e) => setEmail(e.target.value)}
+          color="black"
+          borderColor="#213555"
+          _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+          }}
         />
       </FormControl>
       <FormControl id="password" isRequired>
@@ -153,9 +168,19 @@ const Signup = () => {
             type={show ? "text" : "password"}
             placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
+            color="black"
+          borderColor="#213555"
+          _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+          }}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" 
+              bg='#9BCDD2'
+            color="#213555"
+            onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -168,9 +193,19 @@ const Signup = () => {
             type={show ? "text" : "password"}
             placeholder="Confirm password"
             onChange={(e) => setConfirmpassword(e.target.value)}
+            color="black"
+          borderColor="#213555"
+          _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+          }}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" 
+            bg='#9BCDD2'
+            color="#213555"
+            onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -183,6 +218,14 @@ const Signup = () => {
           p={1.5}
           accept="image/*"
           onChange={(e) => postDetails(e.target.files[0])}
+          color="black"
+          borderColor="#213555"
+          _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+
+          }}
         />
       </FormControl>
       <Button

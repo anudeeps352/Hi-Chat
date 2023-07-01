@@ -130,20 +130,20 @@ function SideDrawer() {
         backgroundColor="4F709C"
         justifyContent="space-between"
         alignItems="center"
-        bg="white"
+        bg="#4F709C"
         w="100%"
         p="5px 10px 5px 10px"
-        borderWidth="5px"
+        borderWidth="0px"
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
             <i className="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }} px={4}>
+            <Text d={{ base: "none", md: "flex" }} px={4} color="white">
               Search User
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Work sans">
+        <Text fontSize="2xl" fontFamily="Work sans" color='white'>
           Hi-Chat
         </Text>
         <div>
@@ -173,7 +173,7 @@ function SideDrawer() {
             </MenuList>
           </Menu>
           <Menu>
-            <MenuButton as={Button} bg="white" rightIcon={<ChevronDownIcon />}>
+            <MenuButton as={Button} bg="#4F709C" rightIcon={<ChevronDownIcon />}>
               <Avatar
                 size="sm"
                 cursor="pointer"
@@ -181,7 +181,7 @@ function SideDrawer() {
                 src={user.pic}
               />
             </MenuButton>
-            <MenuList>
+            <MenuList >
               <ProfileModal user={user}>
                 <MenuItem>My Profile</MenuItem>{" "}
               </ProfileModal>
@@ -192,13 +192,21 @@ function SideDrawer() {
         </div>
       </Box>
 
-      <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+      <Drawer placement="left" onClose={onClose} isOpen={isOpen}
+      >
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
+        <DrawerContent bg="#4F709C" border="none">
+          <DrawerHeader borderBottomWidth="0px" color="white">Search Users</DrawerHeader>
           <DrawerBody>
             <Box d="flex" pb={2}>
               <Input
+                color="white"
+            borderColor="#213555"
+            _active={{
+          bg: '#213555',
+          transform: 'scale(0.98)',
+          borderColor: '#213555',
+          }}
                 placeholder="Search by name or email"
                 mr={2}
                 value={search}
