@@ -21,27 +21,23 @@ app.use(express.json()); // to accept json data
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
-app.use(cors())
-app.get("/", (req, res) => {
-  res.setHeaader("Access-Control-Allow-Credentials","true");
-  res.send("API is running..");
-});
 
-//--------deploy--
 
-// const __dirname1 = path.resolve();
+// --------deploy--
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname1, "/frontend/build")));
+const __dirname1 = path.resolve();
 
-//   app.get("*", (req, res) =>
-//     res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
-//   );
-// } else {
-//   app.get("/", (req, res) => {
-//     res.send("API is running..");
-//   });
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/frontend/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
 
 //--------deploy--
 
@@ -51,7 +47,7 @@ app.use(notFound);
 app.use(errorHandler);
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 const server = app.listen(
   PORT,
@@ -61,7 +57,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin:"https://hi-chat.onrender.com",
+    origin:"http://localhost:3000",
     // credentials: true,
   },
 });
