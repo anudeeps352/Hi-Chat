@@ -45,6 +45,11 @@ app.get("/", (req, res) => {
     });
 app.use(notFound);
 app.use(errorHandler);
+app.use(
+  cors({
+    origin:"https://hi-chat.onrender.com",
+  })
+)
 
 const PORT = process.env.PORT;
 
