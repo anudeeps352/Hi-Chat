@@ -6,6 +6,7 @@ const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
+const cors=require("cors");
 
 dotenv.config();
 connectDB();
@@ -20,6 +21,11 @@ app.use(express.json()); // to accept json data
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
+app.use(cors())
+app.get("/", (req, res) => {
+  res.setHeaader("Access-Control-Allow-Credentials","true");
+  res.send("API is running..");
+});
 
 //--------deploy--
 
@@ -40,16 +46,10 @@ app.use("/api/message", messageRoutes);
 //--------deploy--
 
 // Error Handling middlewares
-app.get("/", (req, res) => {
-      res.send("API is running..");
-    });
+
 app.use(notFound);
 app.use(errorHandler);
-app.use(
-  cors({
-    origin:"https://hi-chat.onrender.com",
-  })
-)
+
 
 const PORT = process.env.PORT;
 
