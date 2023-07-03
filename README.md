@@ -16,7 +16,7 @@ Experience real-time one-to-one and group messaging with instant notifications.
 
 ## Screenshots
 
-![App Screenshot](https://drive.google.com/file/d/197WIuHzzt5i2aLsTiPM4lFHUBNpt5WiQ/view?usp=sharing)
+![App Screenshot](https://github.com/anudeeps352/Hi-Chat/blob/main/snaps/Screenshot%20from%202023-07-03%2020-39-05.png)
 
 ![App Screenshot](https://drive.google.com/file/d/12iky2J4Nif6G8uIAP2eqtvp7blGiU0ui/view?usp=sharing)
 
