@@ -18,15 +18,16 @@ const MyChats = ({ fetchAgain }) => {
 
   const fetchChats = async () => {
     // console.log(user._id);
+    console.log({user});
     try {
       const config = {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
       };
-
       const { data } = await axios.get("https://hi-chat.onrender.com/api/chat", config);
       setChats(data);
+      
     } catch (error) {
       toast({
         title: "Error Occured!",
