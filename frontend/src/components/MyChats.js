@@ -25,6 +25,7 @@ const MyChats = ({ fetchAgain }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
+      console.log(config);
       const { data } = await axios.get("https://hi-chat.onrender.com/api/chat", config);
       setChats(data);
       
