@@ -1,9 +1,10 @@
-const mongoose = require("mongoose");
-const colors = require("colors");
+const mongoose = require('mongoose');
+const colors = require('colors');
+const { apiUrl, dbUrl } = require('./config');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect("mongodb+srv://anudeeps352:Bmw528iestate@cluster0.hrexgow.mongodb.net/?retryWrites=true&w=majority", {
+    const conn = await mongoose.connect(`${dbUrl}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: true,
