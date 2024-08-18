@@ -30,5 +30,5 @@ Experience real-time one-to-one and group messaging with instant notifications.
 
 ## Demo
 
-https://hi-chat-chatapp.netlify.app
+https://hi-chat.deep-builds.xyz
 
